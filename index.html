@@ -31,7 +31,6 @@
       overflow-x: hidden;
     }
 
-    /* Subtle grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -42,7 +41,6 @@
       opacity: 0.4;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -78,7 +76,6 @@
     }
     .nav-contact:hover { color: var(--orange); }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -159,14 +156,12 @@
     }
     .btn-ghost:hover { color: var(--text); border-color: var(--muted); transform: translateY(-1px); }
 
-    /* DIVIDER */
     .divider {
       height: 1px;
       background: var(--border);
       margin: 0 48px;
     }
 
-    /* APPS SECTION */
     .section {
       padding: 96px 48px;
     }
@@ -234,6 +229,11 @@
       line-height: 1.7;
       margin-bottom: 24px;
     }
+    .app-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .app-tag {
       display: inline-block;
       font-size: 11px;
@@ -246,7 +246,6 @@
       border-radius: 2px;
     }
 
-    /* CONTACT SECTION */
     .contact-section {
       padding: 96px 48px;
       background: var(--surface);
@@ -269,9 +268,7 @@
       transition: color 0.2s, border-color 0.2s;
     }
     .contact-email:hover { color: var(--orange); border-color: var(--orange); }
-    .contact-email svg { flex-shrink: 0; }
 
-    /* FOOTER */
     footer {
       padding: 40px 48px;
       display: flex;
@@ -286,18 +283,28 @@
       color: var(--muted);
     }
     .footer-logo span { color: var(--orange); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .footer-link {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--orange); }
     .footer-copy {
       font-size: 12px;
       color: var(--muted);
     }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE */
     @media (max-width: 640px) {
       nav { padding: 20px 24px; }
       .hero { padding: 100px 24px 64px; }
@@ -316,12 +323,11 @@
     <a class="nav-contact" href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-glow"></div>
     <p class="hero-label">Summit Deals LLC</p>
-    <h1 class="hero-title">Apps built for <em>real</em> drivers.</h1>
-    <p class="hero-sub">We build focused, useful mobile applications for people who care about their vehicles. No fluff. No subscriptions. Just tools that work.</p>
+    <h1 class="hero-title">Apps built to <em>matter.</em></h1>
+    <p class="hero-sub">We build focused, useful mobile applications that solve real problems. Each app does one thing exceptionally well — no bloat, no subscriptions, just tools people actually use.</p>
     <div class="hero-cta">
       <a class="btn" href="#apps">Our Apps</a>
       <a class="btn btn-ghost" href="#contact">Get in Touch</a>
@@ -330,29 +336,35 @@
 
   <div class="divider"></div>
 
-  <!-- APPS -->
   <section class="section" id="apps">
     <p class="section-label">Products</p>
     <h2 class="section-title">What we've built.</h2>
     <div class="apps-grid">
+
       <div class="app-card">
         <div class="app-icon">⛽</div>
         <div class="app-name">ZeroEthanol</div>
         <p class="app-desc">The crowdsourced map for finding ethanol-free (E0) and Top Tier certified gas stations across the USA. Built for boaters, classic car owners, and small engine enthusiasts.</p>
-        <span class="app-tag">iOS &amp; Android</span>
+        <div class="app-tags">
+          <span class="app-tag">iOS &amp; Android</span>
+        </div>
       </div>
-      <div class="app-card" style="opacity:0.4;">
-        <div class="app-icon" style="opacity:0.5;">＋</div>
-        <div class="app-name" style="color:var(--muted);">More Coming Soon</div>
-        <p class="app-desc">We're always working on the next tool. Follow along or get in touch if you have an idea.</p>
-        <span class="app-tag" style="opacity:0.5;">In Development</span>
+
+      <div class="app-card">
+        <div class="app-icon">🏈</div>
+        <div class="app-name">Sportsball</div>
+        <p class="app-desc">Live scores, schedules, standings, and box scores for NFL, NBA, MLB, NHL, college sports, and more — all powered by ESPN data. Follow your favorite teams and never miss a game.</p>
+        <div class="app-tags">
+          <span class="app-tag">iOS &amp; Android</span>
+          <span class="app-tag">Coming Soon</span>
+        </div>
       </div>
+
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
       <p class="section-label">Contact</p>
@@ -370,9 +382,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo"><span>Summit</span> Deals LLC</div>
+    <div class="footer-links">
+      <a class="footer-link" href="privacy.html">Privacy Policy</a>
+    </div>
     <div class="footer-copy">© 2026 Summit Deals LLC. All rights reserved.</div>
   </footer>
 
